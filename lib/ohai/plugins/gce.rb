@@ -24,7 +24,8 @@ require 'ohai/mixin/gce_metadata'
 # === Return
 # true:: If gce dmi matches
 # false:: Otherwise
-GOOGLE_SYSFS_DMI = '/sys/firmware/dmi/entries/1-0/raw'
+#GOOGLE_SYSFS_DMI = '/sys/firmware/dmi/entries/1-0/raw'
+GOOGLE_SYSFS_DMI = '/sys/block/sda/device/vendor'
 def has_google_dmi?
  ::File.read(GOOGLE_SYSFS_DMI).include?('Google')
 end
